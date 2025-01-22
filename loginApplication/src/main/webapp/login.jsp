@@ -7,7 +7,7 @@
 <title>Login Page</title>
 </head>
 <body>
-	<h2>Login Form</h2>
+	<h2>Sign In</h2>
  	<div style="color: red; font-weight: bold;">
         <%= (request.getAttribute("errorMessage") != null) ? request.getAttribute("errorMessage") : "" %>
     </div>
@@ -16,7 +16,8 @@
 		<Input type="text" name="username" required><br><br>
 		<label for="password">Password:</label>
 		<input type="text" name="password" required><br><br>
-		<button type="submit" value="login" onClick="errorMessage">Login</button>
+		<button type="submit" value="login" onClick="errorMessage">Login</button> 
+		<a> Haven't signed up already? <a href="signUpform.jsp">SignUp</a></a>
 	</form>
 </body>
 </html> 
