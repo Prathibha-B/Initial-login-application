@@ -50,8 +50,9 @@
 <body>
     <h2>Signup Form</h2>
     <form action="SignUpServlet" method="post">
+        
         <label for="full_name">Name:</label>
-        <input type="text" id="name" name="full_name" required>
+        <input type="text" id="name" name="full_name" required> 
 
         <label for="mailId">Email:</label>
         <input type="email" id="mailId" name="mailId" required>
@@ -61,6 +62,14 @@
 
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" maxlength="20" required>
+        
+        <label for="role">Employee Role:</label>
+        <select for="Employee_Role" name="Employee_Role" id="Employee_Roles" required> 
+            <option value="">--Select role--</option>
+            <option value="Admin">Admin</option>
+            <option value="Associate">Associate</option>
+            <option value="Assistant">Assistant</option>
+        </select><br><br>
 
         <input type="submit" value="Sign Up">
     </form>

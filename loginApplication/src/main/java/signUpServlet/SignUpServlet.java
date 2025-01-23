@@ -44,6 +44,7 @@ public class SignUpServlet extends HttpServlet {
 		String mailId = request.getParameter("mailId");
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
+		String empRole = request.getParameter("Employee_Role");
 		
 		
 		try {
@@ -55,13 +56,16 @@ public class SignUpServlet extends HttpServlet {
 			} else {
 			    out.println("<h2>Connection failed!</h2>");
 			}
-			String query = "INSERT INTO userDetails(full_name, mailId, username, password) VALUES (?, ?, ?, ?)";
+			String query = "INSERT INTO userDetails(full_name, mailId, username, password, Employee_Role) VALUES (?, ?, ?, ?, ?)";
 			PreparedStatement preparedStatement = connection.prepareStatement(query);
 			
+				
 			 	preparedStatement.setString(1, Name);
 	            preparedStatement.setString(2, mailId);
 	            preparedStatement.setString(3, username);
 	            preparedStatement.setString(4, password);  // Consider hashing passwords in real applications
+	            preparedStatement.setString(5, empRole); 
+	            
 
 	            int result = preparedStatement.executeUpdate();
 	            if (result > 0) {
